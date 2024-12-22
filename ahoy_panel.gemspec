@@ -5,8 +5,8 @@ Gem::Specification.new do |spec|
   spec.version     = AhoyPanel::VERSION
   spec.authors     = [ "Chris Jeon" ]
   spec.email       = [ "chris@typefast.co" ]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of AhoyPanel."
+  spec.homepage    = "https://www.ahoypanel.com"
+  spec.summary     = "Decked out dashboard panel for Ahoy analytics for Rails apps."
   spec.description = "TODO: Description of AhoyPanel."
   spec.license     = "MIT"
 
