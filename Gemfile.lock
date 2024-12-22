@@ -3,7 +3,6 @@ PATH
   specs:
     ahoy_panel (0.1.0)
       rails (>= 8.0.1)
-      rspec-rails (~> 7.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -254,6 +253,7 @@ DEPENDENCIES
   pg
   propshaft
   puma
+  rspec-rails (~> 7.0.0)
   rubocop-rails-omakase
 
 BUNDLED WITH
