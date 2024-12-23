@@ -24,5 +24,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rails", ">= 8.0.1"
   spec.add_dependency "importmap-rails"
-  spec.add_development_dependency "rspec-rails", "~> 7.0.0"
+  spec.add_development_dependency "rspec-rails", "~> 7.1.0"
 end
