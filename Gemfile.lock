@@ -2,7 +2,9 @@ PATH
   remote: .
   specs:
     ahoy_panel (0.1.0)
+      heroicon
       importmap-rails
+      inline_svg
       rails (>= 8.0.1)
 
 GEM
@@ -93,12 +95,17 @@ GEM
     erubi (1.13.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    heroicon (1.0.0)
+      rails (>= 5.2)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.1.0)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
+    inline_svg (1.10.0)
+      activesupport (>= 3.0)
+      nokogiri (>= 1.6)
     io-console (0.8.0)
     irb (1.14.3)
       rdoc (>= 4.0.0)
