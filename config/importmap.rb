@@ -1,1 +1,0 @@
-pin "ahoy_panel/application"

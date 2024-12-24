@@ -7,10 +7,9 @@
 
   <%= yield :head %>
 
-  <script src="https://cdn.tailwindcss.com/3.4.16?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
   <%= stylesheet_link_tag    "ahoy_panel/application", media: "all" %>
 
-  <%= javascript_importmap_tags "ahoy_panel/application" %>
+  <script src="https://cdn.tailwindcss.com/3.4.16?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
 </head>
 <body>
   <%= render "layouts/ahoy_panel/header" %>

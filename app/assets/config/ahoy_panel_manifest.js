@@ -1,1 +1,0 @@
-//= link_tree ../javascripts/ahoy_panel .js
