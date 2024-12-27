@@ -56,6 +56,10 @@
         <p class="font-semibold text-gray-900 mb-5">Top Sources</p>
 
         <%= bar_chart @visits.group(:referring_domain).count.sort_by { |_, count| -count }.first(10).to_h %>
+
+        <div class="flex justify-center mt-6">
+          <%= link_to "Details >", "", class: "link tracking-wide text-sm text-gray-600 font-semibold uppercase" %>
+        </div>
       </div>
     </div>
 
@@ -64,6 +68,10 @@
         <p class="font-semibold text-gray-900 mb-5">Top Pages</p>
 
         <%= bar_chart @visits.group(:landing_page).count.sort_by { |_, count| -count }.first(10).to_h %>
+
+        <div class="flex justify-center mt-6">
+          <%= link_to "Details >", "", class: "link tracking-wide text-sm text-gray-600 font-semibold uppercase" %>
+        </div>
       </div>
     </div>
 
@@ -72,6 +80,10 @@
         <p class="font-semibold text-gray-900 mb-5">Countries</p>
 
         <%= bar_chart @visits.where.not(country: nil).group(:country).count.sort_by { |_, count| -count }.first(10).to_h %>
+
+        <div class="flex justify-center mt-6">
+          <%= link_to "Details >", "", class: "link tracking-wide text-sm text-gray-600 font-semibold uppercase" %>
+        </div>
       </div>
     </div>
 
@@ -80,6 +92,10 @@
         <p class="font-semibold text-gray-900 mb-5">Browsers</p>
 
         <%= bar_chart @visits.where.not(browser: nil).group(:browser).count.sort_by { |_, count| -count }.first(10).to_h %>
+
+        <div class="flex justify-center mt-6">
+          <%= link_to "Details >", "", class: "link tracking-wide text-sm text-gray-600 font-semibold uppercase" %>
+        </div>
       </div>
     </div>
   </div>
