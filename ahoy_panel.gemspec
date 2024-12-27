@@ -29,5 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "stimulus-rails"
   spec.add_dependency "heroicon"
   spec.add_dependency "inline_svg"
+  spec.add_dependency "chartkick"
+  spec.add_dependency "groupdate"
   spec.add_development_dependency "rspec-rails", "~> 7.1.0"
 end
