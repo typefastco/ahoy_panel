@@ -20,16 +20,39 @@
   <div class="mb-8">
     <h3 class="text-base font-semibold text-gray-900 mb-5">Total Visits</h3>
 
-    <%= line_chart @visits.group_by_day(:started_at).count %>
+    <div class="overflow-hidden rounded-lg bg-white shadow">
+      <div class="px-4 py-5 sm:p-6">
+        <!-- Content goes here -->
+        <%= line_chart @visits.group_by_day(:started_at).count %>
+      </div>
+    </div>
   </div>
 
   <div class="mb-8">
     <h3 class="text-base font-semibold text-gray-900 mb-5">Total Page Views</h3>
 
-    <%= line_chart @events.group_by_day(:time).count %>
+    <div class="overflow-hidden rounded-lg bg-white shadow">
+      <div class="px-4 py-5 sm:p-6">
+        <%= line_chart @events.group_by_day(:time).count %>
+      </div>
+    </div>
   </div>
 
-  <div class="mb-8">
-    <div></div>
+  <div class="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div class="overflow-hidden rounded-lg bg-white shadow">
+      <div class="px-4 py-5 sm:p-6">
+        <p class="font-semibold text-gray-900 mb-5">Top Sources</p>
+
+        <%= bar_chart @visits.group(:referring_domain).count.sort_by { |_, count| -count }.first(10).to_h %>
+      </div>
+    </div>
+
+    <div class="overflow-hidden rounded-lg bg-white shadow">
+      <div class="px-4 py-5 sm:p-6">
+        <p class="font-semibold text-gray-900 mb-5">Top Pages</p>
+
+        <%= bar_chart @visits.group(:landing_page).count.sort_by { |_, count| -count }.first(10).to_h %>
+      </div>
+    </div>
   </div>
 </div>
