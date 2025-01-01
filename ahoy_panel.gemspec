@@ -32,5 +32,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "chartkick"
   spec.add_dependency "groupdate"
   spec.add_dependency "countries"
+  spec.add_dependency "view_component"
   spec.add_development_dependency "rspec-rails", "~> 7.1.0"
 end

@@ -7,48 +7,12 @@
     <div class="overflow-hidden rounded-lg bg-white shadow mt-5">
       <div class="px-4">
         <dl class="mx-auto grid grid-cols-1 gap-px bg-gray-900/5 sm:grid-cols-2 lg:grid-cols-6">
-          <div class="justify-between gap-x-4 gap-y-2 bg-white px-4 py-10 sm:px-6 xl:px-8">
-            <dt class="text-xs/6 font-semibold text-gray-500 uppercase tracking-wide mb-2">Unique Visitors</dt>
-            <div class="flex items-center gap-x-4">
-              <dd class="flex-none text-xl/3 font-medium tracking-tight text-gray-900">0</dd>
-              <dd class="text-xs font-medium text-gray-700">-1.39%</dd>
-            </div>
-          </div>
-          <div class="justify-between gap-x-4 gap-y-2 bg-white px-4 py-10 sm:px-6 xl:px-8">
-            <dt class="text-xs/6 font-semibold text-gray-500 uppercase tracking-wide mb-2">Total Visits</dt>
-            <div class="flex items-center gap-x-4">
-              <dd class="flex-none text-xl/3 font-medium tracking-tight text-gray-900">0</dd>
-              <dd class="text-xs font-medium text-gray-700">-1.39%</dd>
-            </div>
-          </div>
-          <div class="justify-between gap-x-4 gap-y-2 bg-white px-4 py-10 sm:px-6 xl:px-8">
-            <dt class="text-xs/6 font-semibold text-gray-500 uppercase tracking-wide mb-2">Total Pageviews</dt>
-            <div class="flex items-center gap-x-4">
-              <dd class="flex-none text-xl/3 font-medium tracking-tight text-gray-900">0</dd>
-              <dd class="text-xs font-medium text-gray-700">-1.39%</dd>
-            </div>
-          </div>
-          <div class="justify-between gap-x-4 gap-y-2 bg-white px-4 py-10 sm:px-6 xl:px-8">
-            <dt class="text-xs/6 font-semibold text-gray-500 uppercase tracking-wide mb-2">View Per Visit</dt>
-            <div class="flex items-center gap-x-4">
-              <dd class="flex-none text-xl/3 font-medium tracking-tight text-gray-900">0</dd>
-              <dd class="text-xs font-medium text-gray-700">-1.39%</dd>
-            </div>
-          </div>
-          <div class="justify-between gap-x-4 gap-y-2 bg-white px-4 py-10 sm:px-6 xl:px-8">
-            <dt class="text-xs/6 font-semibold text-gray-500 uppercase tracking-wide mb-2">Bounce Rate</dt>
-            <div class="flex items-center gap-x-4">
-              <dd class="flex-none text-xl/3 font-medium tracking-tight text-gray-900">0</dd>
-              <dd class="text-xs font-medium text-gray-700">-1.39%</dd>
-            </div>
-          </div>
-          <div class="justify-between gap-x-4 gap-y-2 bg-white px-4 py-10 sm:px-6 xl:px-8">
-            <dt class="text-xs/6 font-semibold text-gray-500 uppercase tracking-wide mb-2">Visit Duration</dt>
-            <div class="flex items-center gap-x-4">
-              <dd class="flex-none text-xl/3 font-medium tracking-tight text-gray-900">0</dd>
-              <dd class="text-xs font-medium text-gray-700">-1.39%</dd>
-            </div>
-          </div>
+          <%= render StatBoxComponent.new(title: "Unique Visitors", data: 0, change: "-1.39%") %>
+          <%= render StatBoxComponent.new(title: "Total Visits", data: 0, change: "-1.39%") %>
+          <%= render StatBoxComponent.new(title: "Total Pageviews", data: 0, change: "-1.39%") %>
+          <%= render StatBoxComponent.new(title: "View Per Visit", data: 0, change: "-1.39%") %>
+          <%= render StatBoxComponent.new(title: "Bounce Rate", data: 0, change: "-1.39%") %>
+          <%= render StatBoxComponent.new(title: "Visit Duration", data: 0, change: "-1.39%") %>
         </dl>
 
         <!-- Content goes here -->
@@ -62,7 +26,7 @@
       <div class="px-4 py-5 sm:p-6">
         <p class="font-semibold text-gray-900 mb-5">Top Sources</p>
 
-        <%= bar_chart @visits.group(:referring_domain).count.sort_by { |_, count| -count }.first(10).to_h %>
+        <%= bar_chart @visits.group(:referring_domain).count.sort_by { |_, count| -count }.first(10).to_h, colors: ["#0284c7", "#4c7"] %>
 
         <div class="flex justify-center mt-6">
           <%= link_to "Details >", "", class: "link tracking-wide text-sm text-gray-600 font-semibold uppercase" %>
