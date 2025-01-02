@@ -12,6 +12,15 @@ module AhoyPanel
 
       @total_visits_current = Ahoy::Visit.where(started_at: current_time_range)
       @total_visits_before = Ahoy::Visit.where(started_at: before_time_range)
+
+      @dropdown_item_groups = [
+        [{ label: "Today", url: "" }, { label: "Yesterday", url: "" }],
+        [{ label: "Last 7 Days", url: "" }, { label: "Last 30 Days", url: "" }],
+        [{ label: "Month to Date", url: "" }, { label: "Last Month", url: "" }],
+        [{ label: "Year to Date", url: "" }, { label: "Last 12 Months", url: "" }],
+        [{ label: "All Time", url: "" }, { label: "Custom Range", url: "" }],
+        [{ label: "Compare", url: "" }],
+      ]
     end
 
     private

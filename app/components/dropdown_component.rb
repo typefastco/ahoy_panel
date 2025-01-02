@@ -1,6 +1,24 @@
 # frozen_string_literal: true
 
 class DropdownComponent < ViewComponent::Base
-  def initialize
+  def initialize(item_groups:)
+    @item_groups = build_item_groups(item_groups)
+  end
+
+  private
+
+  Item = Struct.new(:label, :url, :class)
+
+  CLASSES = {
+    active: "block px-4 py-2 text-sm bg-gray-100 text-gray-900 outline-none hover:bg-gray-100",
+    inactive: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+  }
+
+  def build_item_groups(item_groups)
+    item_groups.map do |items|
+      items.map do |item|
+        Item.new(item[:label], item[:url], CLASSES[:inactive])
+      end
+    end
   end
 end
