@@ -3,17 +3,20 @@
     <div class="flex justify-between items-center">
       <h3 class="text-base font-semibold text-gray-900">App Data</h3>
 
-      <%= render DropdownComponent.new(item_groups: @dropdown_item_groups) %>
+      <div class="flex items-center gap-x-4">
+        <%= render AhoyPanel::DateArrowNavigatorComponent.new %>
+        <%= render AhoyPanel::DropdownComponent.new(item_groups: @dropdown_item_groups) %>
+      </div>
     </div>
     <div class="overflow-hidden rounded-lg bg-white shadow mt-5">
       <div class="px-4">
         <dl class="mx-auto grid grid-cols-1 gap-px bg-gray-900/5 sm:grid-cols-2 lg:grid-cols-6">
-          <%= render StatBoxComponent.new(title: "Unique Visitors", data: 0, change: "-1.39%") %>
-          <%= render StatBoxComponent.new(title: "Total Visits", data: 0, change: "-1.39%") %>
-          <%= render StatBoxComponent.new(title: "Total Pageviews", data: 0, change: "-1.39%") %>
-          <%= render StatBoxComponent.new(title: "View Per Visit", data: 0, change: "-1.39%") %>
-          <%= render StatBoxComponent.new(title: "Bounce Rate", data: 0, change: "-1.39%") %>
-          <%= render StatBoxComponent.new(title: "Visit Duration", data: 0, change: "-1.39%") %>
+          <%= render AhoyPanel::StatBoxComponent.new(title: "Unique Visitors", data: 0, change: "-1.39%") %>
+          <%= render AhoyPanel::StatBoxComponent.new(title: "Total Visits", data: 0, change: "-1.39%") %>
+          <%= render AhoyPanel::StatBoxComponent.new(title: "Total Pageviews", data: 0, change: "-1.39%") %>
+          <%= render AhoyPanel::StatBoxComponent.new(title: "View Per Visit", data: 0, change: "-1.39%") %>
+          <%= render AhoyPanel::StatBoxComponent.new(title: "Bounce Rate", data: 0, change: "-1.39%") %>
+          <%= render AhoyPanel::StatBoxComponent.new(title: "Visit Duration", data: 0, change: "-1.39%") %>
         </dl>
 
         <!-- Content goes here -->
