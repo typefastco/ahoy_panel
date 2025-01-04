@@ -4,8 +4,8 @@
       <h3 class="text-base font-semibold text-gray-900">App Data</h3>
 
       <div class="flex items-center gap-x-4">
-        <%= render AhoyPanel::DateArrowNavigatorComponent.new %>
-        <%= render AhoyPanel::DropdownComponent.new(item_groups: @dropdown_item_groups) %>
+        <%= render AhoyPanel::DateArrowNavigatorComponent.new(date: @selected_date) %>
+        <%= render AhoyPanel::DropdownComponent.new(item_groups: @dropdown_item_groups, date: @selected_date) %>
       </div>
     </div>
     <div class="overflow-hidden rounded-lg bg-white shadow mt-5">

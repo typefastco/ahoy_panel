@@ -2,7 +2,7 @@
 
 module AhoyPanel
   class DropdownComponent < ViewComponent::Base
-    def initialize(item_groups:, date: Time.zone.now)
+    def initialize(item_groups:, date: Time.zone.now.to_date)
       @item_groups = build_item_groups(item_groups)
       @label = humanize_date(date)
     end

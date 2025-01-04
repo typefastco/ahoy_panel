@@ -2,9 +2,6 @@
 
 module AhoyPanel
   class StatBoxComponent < ViewComponent::Base
-    # TODO
-    # Rails.application.routes.url_helpers.root_path
-
     delegate :heroicon, to: :helpers
 
     def initialize(title:, data:, change: nil)
