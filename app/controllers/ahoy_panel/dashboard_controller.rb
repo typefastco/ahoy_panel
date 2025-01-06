@@ -22,7 +22,7 @@ module AhoyPanel
         [{ label: "Compare", url: "" }],
       ]
 
-      @selected_date = params[:selected_date]&.to_time.to_date || Time.zone.now.to_date
+      @selected_date = params[:selected_date]&.to_time&.to_date || Time.zone.now.to_date
     end
 
     private
