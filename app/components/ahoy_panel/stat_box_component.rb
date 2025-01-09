@@ -7,7 +7,7 @@ module AhoyPanel
     def initialize(title:, data:, change: nil)
       @title = title
       @data = data
-      @change = change.to_f
+      @change = change
     end
   end
 end

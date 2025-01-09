@@ -7,6 +7,14 @@ module AhoyPanel
 
     attr_reader :start_at, :end_at
 
+    def to_params
+      { title:, data:, change: }
+    end
+
+    def title
+      raise "Must implement"
+    end
+
     def data
       raise "Must implement"
     end

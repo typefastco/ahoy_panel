@@ -28,6 +28,12 @@ module AhoyPanel
       @unique_visitors_data = AhoyPanel::UniqueVisitorsData.new(
         start_at: date_range.start_at, end_at: date_range.end_at
       )
+      @total_visits_data = AhoyPanel::TotalVisitsData.new(
+        start_at: date_range.start_at, end_at: date_range.end_at
+      )
+      @total_pageviews_data = AhoyPanel::TotalPageviewsData.new(
+        start_at: date_range.start_at, end_at: date_range.end_at
+      )
     end
 
     private
