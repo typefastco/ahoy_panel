@@ -1,8 +1,20 @@
 # AhoyPanel
-Short description and motivation.
+AhoyPanel is a rails engine that will give detailed analytics on Rails apps that use ahoy to collect analytics data.
 
 ## Usage
-How to use my plugin.
+Install the gem in your Gemfile.
+
+```ruby
+gem "ahoy_panel"
+```
+
+And in `config/routes.rb`
+
+```ruby
+mount AhoyPanel::Engine, at: "/ahoy_panel"
+```
+
+And then navigate to `/ahoy_panel` to see the dashboard.
 
 ## Installation
 Add this line to your application's Gemfile:
