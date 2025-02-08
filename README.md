@@ -36,5 +36,28 @@ $ gem install ahoy_panel
 ## Contributing
 Contribution directions go here.
 
+## Running the gem locally
+
+1. Install the gem in your locally run app
+2. In routes.rb, mount the engine
+
+```ruby
+mount AhoyPanel::Engine, at: "/ahoy_panel"
+```
+
+3. Run the tailwindcss watch command in the root of the gem
+
+```bash
+$ bundle exec rails app:tailwindcss:watch
+```
+
+4. Run the rails server in your Rails application
+
+```bash
+$ bundle exec rails s
+```
+
+5. Navigate to `/ahoy_panel` to see the dashboard
+
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
