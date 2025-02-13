@@ -1,6 +1,7 @@
 require "importmap-rails"
 require "turbo-rails"
 require "stimulus-rails"
+require "view_component"
 
 module AhoyPanel
   class Engine < ::Rails::Engine
