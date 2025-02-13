@@ -1,5 +1,5 @@
 module AhoyPanel
-  class TotalVisitsData < BaseMetric
+  class ViewsPerVisitData < BaseMetric
     def initialize(params:, base_collection:, date_column: :started_at)
       @params = params
       @base_collection = base_collection
@@ -9,20 +9,24 @@ module AhoyPanel
     end
 
     def title
-      "Total Visits"
+      "Views Per Visit"
     end
 
-    # Counts the total number of visits within the current interval.
+    # Calculates the average number of pageviews per visit for the current interval.
     def data
-      @data ||= calculate_range(base_collection, start_at..end_at).count
+      visits = Ahoy::Visit.where(started_at: start_at..end_at).count
+      pageviews = Ahoy::Event.where(name: 'pageview', time: start_at..end_at).count
+      visits.zero? ? 0 : (pageviews.to_f / visits).round(2)
     end
 
-    # Compares the current visits count with the previous interval and computes the percentage change.
+    # Compares the current average with that of the previous interval and computes the percentage change.
     def change
-      current_count = data
+      current_value = data
       prev_range = calculate_previous_range(start_at..end_at)
-      previous_count = calculate_range(base_collection, prev_range).count
-      compute_trend(current_count, previous_count)
+      previous_visits = Ahoy::Visit.where(started_at: prev_range).count
+      previous_pageviews = Ahoy::Event.where(name: 'pageview', time: prev_range).count
+      previous_value = previous_visits.zero? ? 0 : (previous_pageviews.to_f / previous_visits).round(2)
+      compute_trend(current_value, previous_value)
     end
 
     private

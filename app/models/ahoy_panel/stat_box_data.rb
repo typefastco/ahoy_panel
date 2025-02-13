@@ -1,5 +1,7 @@
 module AhoyPanel
   class StatBoxData
+    include IntervalConstants
+
     def initialize(start_at:, end_at:)
       @start_at = start_at
       @end_at = end_at
@@ -8,7 +10,7 @@ module AhoyPanel
     attr_reader :start_at, :end_at
 
     def to_params
-      { title:, data:, change: }
+      { title: title, data: data, change: change }
     end
 
     def title

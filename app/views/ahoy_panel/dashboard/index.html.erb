@@ -14,9 +14,9 @@
           <%= render AhoyPanel::StatBoxComponent.new(**@unique_visitors_data.to_params) %>
           <%= render AhoyPanel::StatBoxComponent.new(**@total_visits_data.to_params) %>
           <%= render AhoyPanel::StatBoxComponent.new(**@total_pageviews_data.to_params) %>
-          <%= render AhoyPanel::StatBoxComponent.new(title: "View Per Visit", data: 0, change: -1.39) %>
-          <%= render AhoyPanel::StatBoxComponent.new(title: "Bounce Rate", data: 0, change: -1.39) %>
-          <%= render AhoyPanel::StatBoxComponent.new(title: "Visit Duration", data: 0, change: -1.39) %>
+          <%= render AhoyPanel::StatBoxComponent.new(**@views_per_visit_data.to_params) %>
+          <%= render AhoyPanel::StatBoxComponent.new(**@bounce_rate_data.to_params) %>
+          <%= render AhoyPanel::StatBoxComponent.new(**@visit_duration_data.to_params) %>
         </dl>
 
         <!-- Content goes here -->
