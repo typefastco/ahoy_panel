@@ -6,6 +6,9 @@ module AhoyPanel
   class Engine < ::Rails::Engine
     isolate_namespace AhoyPanel
 
+    config.autoload_paths << root.join("lib")
+    config.eager_load_paths << root.join("lib")
+
     initializer "ahoy_panel.assets" do |app|
       app.config.assets.paths << root.join("app/javascript")
       app.config.assets.precompile += %w[ahoy_panel_manifest]
