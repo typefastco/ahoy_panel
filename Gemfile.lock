@@ -3,7 +3,7 @@ PATH
   specs:
     ahoy_panel (0.0.4)
       ahoy_matey (>= 1.1)
-      rails (>= 8.0.1)
+      rails (>= 7)
 
 GEM
   remote: https://rubygems.org/
