@@ -22,4 +22,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rails", ">= 7"
   spec.add_dependency "ahoy_matey", ">= 1.1"
+  spec.add_dependency "dry-configurable", ">= 1.3"
 end

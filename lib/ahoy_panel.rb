@@ -1,6 +1,9 @@
 require "ahoy_panel/version"
 require "ahoy_panel/engine"
+require 'dry-configurable'
 
 module AhoyPanel
-  # Your code goes here...
+  extend Dry::Configurable
+
+  setting :api_key
 end
