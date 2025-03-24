@@ -7,11 +7,9 @@ module AhoyPanel
     def authenticate_api_key!
       api_key = request.headers["Ahoy-Panel-Api-Key"]
 
-      ahoy_panel_root_url = if Rails.env.development?
-                              "http://127.0.0.1:3000"
-                            else
-                              "https://www.ahoypanel.com"
-                            end
+      return true if Rails.env.development?
+
+      ahoy_panel_root_url = "https://www.ahoypanel.com"
 
       client = Faraday.new(url: ahoy_panel_root_url) do |conn|
         conn.headers["Ahoy-Panel-Api-Key"] = "asdf #{api_key}"
