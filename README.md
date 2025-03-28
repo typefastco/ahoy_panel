@@ -19,10 +19,10 @@ It enables your Rails app to stream Ahoy events to the Ahoy Panel API for real-t
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your Rails application's Gemfile:
 
 ```ruby
-gem 'ahoy_panel'
+gem "ahoy_panel"
 ```
 
 And then execute:
@@ -35,7 +35,7 @@ bundle install
 
 ## Configuration
 
-After installing the gem, you'll need to configure it to connect to your Ahoy Panel account.
+After installing the gem, you'll need to configure it to connect to your Ahoy Panel account. This gem assumes that you already have `ahoy_matey` gem installed, configured, and in usage.
 
 Create an initializer file:
 
@@ -44,12 +44,6 @@ Create an initializer file:
 AhoyPanel.configure do |config|
   # Your project’s API key from https://www.ahoypanel.com/settings
   config.api_key = ENV.fetch("AHOY_PANEL_API_KEY")
-
-  # (Optional) Set the API endpoint if you're self-hosting
-  # config.api_url = "https://your-self-hosted-instance.com/api/v1/events"
-
-  # (Optional) Set the environment(s) where data should be sent
-  config.enabled_environments = %w[production]
 end
 ```
 
@@ -64,7 +58,7 @@ AHOY_PANEL_API_KEY=your-api-key-here
 
 ## Usage
 
-Once configured, `ahoy_panel` will automatically listen to Ahoy events (`Ahoy::Event`) and send them to the Ahoy Panel service in the background.
+Once configured, anytime you load your dashboard in [Ahoy Panel](https://www.ahoypanel.com), your `ahoy_panel` will send the data that's needed `Ahoy::Visit` and `Ahoy::Event` to [Ahoy Panel](https://www.ahoypanel.com) to build the dashboard.
 
 No extra setup required – just install, configure, and you're done! 🎉
 
@@ -72,8 +66,7 @@ No extra setup required – just install, configure, and you're done! 🎉
 
 ## Requirements
 
-- Ruby 3.0+
-- Rails 6.1+
+- Rails 6+
 - [Ahoy](https://github.com/ankane/ahoy) gem installed and configured
 
 ---
@@ -88,15 +81,13 @@ No extra setup required – just install, configure, and you're done! 🎉
 
 ## Troubleshooting
 
-- Ensure your API key is correct and has access to the project  
-- Confirm the gem is only enabled in the correct environment  
-- Check logs for any delivery errors or rate limit issues  
+- Ensure your API key is correct and the base_url configured in your [Ahoy Panel](https://www.ahoypanel.com) account is correct. Any issues, reach out.
 
 ---
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at [https://github.com/yourusername/ahoy_panel](https://github.com/yourusername/ahoy_panel).
+Bug reports and pull requests are welcome on GitHub at [https://github.com/yourusername/ahoy_panel](https://github.com/typefastco/ahoy_panel).
 
 ---
 

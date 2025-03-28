@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
     Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   end
 
-  spec.add_dependency "rails", ">= 7"
+  spec.add_dependency "rails", ">= 6"
   spec.add_dependency "ahoy_matey", ">= 1.1"
   spec.add_dependency "dry-configurable", ">= 1.3"
   spec.add_dependency "faraday", ">= 2.12"
