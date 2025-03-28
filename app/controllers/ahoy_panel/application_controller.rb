@@ -6,9 +6,8 @@ module AhoyPanel
 
     def authenticate_api_key!
       api_key = request.headers["Ahoy-Panel-Api-Key"]
-      skip_verification = ActiveRecord::Type::Boolean.new.cast(request.headers["Ahoy-Panel-Skip-Verification"])
 
-      return true if skip_verification
+      return true if Rails.env.development?
 
       ahoy_panel_root_url = "https://www.ahoypanel.com"
 
@@ -17,10 +16,6 @@ module AhoyPanel
         conn.request :json
         conn.response :json
       end
-
-      response = client.get("/api_key_verify")
-
-      client = Faraday.new(url: ahoy_panel_root_url)
 
       if !response.body["verified"]
         raise
