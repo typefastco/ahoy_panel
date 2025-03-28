@@ -87,7 +87,7 @@ No extra setup required – just install, configure, and you're done! 🎉
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at [https://github.com/yourusername/ahoy_panel](https://github.com/typefastco/ahoy_panel).
+Bug reports and pull requests are welcome on GitHub at [https://github.com/typefastco/ahoy_panel](https://github.com/typefastco/ahoy_panel).
 
 ---
 
