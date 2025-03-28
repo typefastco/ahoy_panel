@@ -31,6 +31,13 @@ And then execute:
 bundle install
 ```
 
+Mount AhoyPanel in your `config/routes.rb` file:
+```ruby
+Rails.application.routes.draw do
+  mount AhoyPanel::Engine => "ahoy_panel"
+end
+```
+
 ---
 
 ## Configuration
