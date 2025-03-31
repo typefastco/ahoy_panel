@@ -21,7 +21,7 @@ module AhoyPanel
       render json: { visit: @visit, events: @events }
     end
 
-    def all_time_dates
+    def dates
       start_date = ::Ahoy::Visit.order(started_at: :asc).first.started_at.to_date
       end_date = ::Ahoy::Visit.order(started_at: :desc).first.started_at.to_date
 
