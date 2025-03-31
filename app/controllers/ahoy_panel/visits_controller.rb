@@ -11,7 +11,7 @@ module AhoyPanel
         @visits = @visits.page(@page)
       end
 
-      render json: @visits
+      render json: { visits: @visits, total_pages: @page.present? ? @visits.total_pages : nil }
     end
 
     def all_time_dates
