@@ -24,4 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "ahoy_matey", ">= 1.1"
   spec.add_dependency "dry-configurable", ">= 1.3"
   spec.add_dependency "faraday", ">= 2.12"
+  spec.add_dependency "kaminari", ">= 1.2.2"
 end
