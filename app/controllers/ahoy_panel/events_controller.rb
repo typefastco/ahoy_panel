@@ -8,10 +8,10 @@ module AhoyPanel
       @events = ::Ahoy::Event.where(time: @start_date..@end_date).order(:id)
 
       if @page.present?
-        @events = @visits.page(@page)
+        @events = @events.page(@page)
       end
 
-      render json: { events: @events, total_count: @page.present? ? @visits.total_count : nil }
+      render json: { events: @events, total_count: @page.present? ? @events.total_count : nil }
     end
 
     def dates
