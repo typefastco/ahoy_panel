@@ -5,7 +5,7 @@ module AhoyPanel
       @end_date = params[:end_date].to_date.end_of_day
       @page = params[:page]
 
-      @visits = ::Ahoy::Visit.where(started_at: @start_date..@end_date)
+      @visits = ::Ahoy::Visit.where(started_at: @start_date..@end_date).order(:id)
 
       if @page.present?
         @visits = @visits.page(@page)
