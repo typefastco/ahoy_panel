@@ -13,8 +13,22 @@ module AhoyPanel
                     end
 
       @visits = ::Ahoy::Visit.where(started_at: @date_range).order(:id)
+
       filtering_params.each do |key, value|
-        @visits = @visits.where("#{key} ilike ?", "%#{value.downcase}%")
+        case key
+        when :id
+          @visits = @visits.where(id: value)
+        when :user_id
+          @visits = @visits.where(user_id: value)
+        when :referring_domain
+          @visits = @visits.where("referring_domain ilike ?", "%#{value}%")
+        when :country
+          @visits = @visits.where("country ilike ?", "%#{value}%")
+        when :city
+          @visits = @visits.where("city ilike ?", "%#{value}%")
+        when :region
+          @visits = @visits.where("region ilike ?", "%#{value}%")
+        end
       end
 
       if @page.present?
