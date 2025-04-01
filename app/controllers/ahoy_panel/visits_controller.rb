@@ -14,12 +14,12 @@ module AhoyPanel
 
       @visits = ::Ahoy::Visit.where(started_at: @date_range).order(:id)
 
-      filtering_params.each do |key, value|
+      @filtering_params.each do |key, value|
         case key
         when :id
-          @visits = @visits.where(id: value)
+          @visits = @visits.where(id: value.to_i)
         when :user_id
-          @visits = @visits.where(user_id: value)
+          @visits = @visits.where(user_id: value.to_i)
         when :referring_domain
           @visits = @visits.where("referring_domain ilike ?", "%#{value}%")
         when :country
