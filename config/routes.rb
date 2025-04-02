@@ -3,5 +3,5 @@ AhoyPanel::Engine.routes.draw do
   resources :visits, only: [:index, :show]
 
   get "event_dates", to: "events#dates"
-  resources :events, only: [:index]
+  resources :events, only: [:index, :show]
 end

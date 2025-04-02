@@ -34,6 +34,12 @@ module AhoyPanel
       render json: { events: @events, total_count: @page.present? ? @events.total_count : nil }
     end
 
+    def show
+      @event = ::Ahoy::Event.find(params[:id])
+
+      render json: @event
+    end
+
     def dates
       start_date = ::Ahoy::Event.order(time: :asc).first.time.to_date
       end_date = ::Ahoy::Event.order(time: :desc).first.time.to_date
