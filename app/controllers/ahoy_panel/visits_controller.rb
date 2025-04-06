@@ -20,14 +20,42 @@ module AhoyPanel
           @visits = @visits.where(id: value.to_i)
         when :user_id
           @visits = @visits.where(user_id: value.to_i)
+        when :user_agent
+          @visits = @visits.where("user_agent ilike ?", "%#{value}%")
+        when :referrer
+          @visits = @visits.where("referrer ilike ?", "%#{value}%")
         when :referring_domain
           @visits = @visits.where("referring_domain ilike ?", "%#{value}%")
+        when :landing_page
+          @visits = @visits.where("landing_page ilike ?", "%#{value}%")
+        when :browser
+          @visits = @visits.where("browser ilike ?", "%#{value}%")
+        when :os
+          @visits = @visits.where("os ilike ?", "%#{value}%")
+        when :device_type
+          @visits = @visits.where("device_type ilike ?", "%#{value}%")
         when :country
           @visits = @visits.where("country ilike ?", "%#{value}%")
         when :city
           @visits = @visits.where("city ilike ?", "%#{value}%")
         when :region
           @visits = @visits.where("region ilike ?", "%#{value}%")
+        when :utm_source
+          @visits = @visits.where("utm_source ilike ?", "%#{value}%")
+        when :utm_medium
+          @visits = @visits.where("utm_medium ilike ?", "%#{value}%")
+        when :utm_term
+          @visits = @visits.where("utm_term ilike ?", "%#{value}%")
+        when :utm_content
+          @visits = @visits.where("utm_content ilike ?", "%#{value}%")
+        when :utm_campaign
+          @visits = @visits.where("utm_campaign ilike ?", "%#{value}%")
+        when :app_version
+          @visits = @visits.where("app_version ilike ?", "%#{value}%")
+        when :os_version
+          @visits = @visits.where("os_version ilike ?", "%#{value}%")
+        when :platform
+          @visits = @visits.where("platform ilike ?", "%#{value}%")
         end
       end
 
